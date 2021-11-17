@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta content="IE=edge" http-equiv="X-UA-Compatible" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Meta Description -->
+    <meta content="" name="description" />
+
+    <!-- CSS Stylesheets -->
+    <link rel="stylesheet" href="styles/index.css" />
+
+    <!--Font Styles -->
+
+    <!--FAVICON-->
+    <link href="images/insurance-broker-favicon.ico" rel="icon" />
+    <title>Insurance Broker | Free Quote</title>
+</head>
+
+<body>
+    <!-- Start of header -->
+    <header class="fixed w-full z-10 border-b border-gray-600 bg-black">
+        <nav class="lg:max-w-screen-xl  flex flex-row flex-wrap justify-between my-4 lg:my-6 ml-auto mr-auto "
+            role="navigation">
+            <!-- COMPANY LOGO (SVG) -->
+            <div class="flex items-center ml-3">
+                <a href="/">
+                    <div class="flex items-center">
+                        <!-- Logo SVG-->
+                        <a class="ml-4 flex items-center" href="/">
+                            <svg class="fill-current text-yellow-200 h-5 w-5" width="24" height="28" viewBox="0 0 24 28"
+                                fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M12 3.33332C7.86667 3.33332 4.24 6.03999 3.06667 9.99999H20.9333C20.3596 8.07562 19.1805 6.38761 17.5712 5.18661C15.9618 3.98561 14.0081 3.33568 12 3.33332ZM12 0.666656C15.1826 0.666656 18.2348 1.93094 20.4853 4.18138C22.7357 6.43181 24 9.48406 24 12.6667H13.3333V23.3333C13.3333 24.3942 12.9119 25.4116 12.1618 26.1618C11.4116 26.9119 10.3942 27.3333 9.33333 27.3333C8.27247 27.3333 7.25505 26.9119 6.50491 26.1618C5.75476 25.4116 5.33333 24.3942 5.33333 23.3333V22H8V23.3333C8 23.6869 8.14048 24.0261 8.39052 24.2761C8.64057 24.5262 8.97971 24.6667 9.33333 24.6667C9.68696 24.6667 10.0261 24.5262 10.2761 24.2761C10.5262 24.0261 10.6667 23.6869 10.6667 23.3333V12.6667H0C0 9.48406 1.26428 6.43181 3.51472 4.18138C5.76515 1.93094 8.8174 0.666656 12 0.666656Z" />
+                            </svg>
+                            <span
+                                class="inline-block ml-2 text-xl font-semibold tracking-wider uppercase text-gray-200">TBG</span>
+                        </a>
+                    </div>
+                </a>
+            </div>
+            <div class="inline-block h-8 mr-3 lg:hidden">
+                <button id="nav_toggle" class="h-full w-full">
+                    <svg class="h-full w-auto" xmlns="http://www.w3.org/2000/svg" width="192" height="192" fill="white"
+                        viewBox="0 0 256 256">
+                        <rect width="256" height="256" fill="none"></rect>
+                        <line x1="40" y1="128" x2="216" y2="128" stroke="white" stroke-linecap="round"
+                            stroke-linejoin="round" stroke-width="16"></line>
+                        <line x1="40" y1="64" x2="216" y2="64" stroke="white" stroke-linecap="round"
+                            stroke-linejoin="round" stroke-width="16"></line>
+                        <line x1="40" y1="192" x2="216" y2="192" stroke="white" stroke-linecap="round"
+                            stroke-linejoin="round" stroke-width="16"></line>
+                    </svg>
+                </button>
+            </div>
+            <div id="nav_content"
+                class="w-full hidden py-8 lg:flex lg:w-auto lg:py-0 lg:items-center rounded-br-5xl shadow-md lg:shadow-none border-b-2 lg:border-0 border-blue-800 bg-black ">
+                <ul class="flex flex-col gap-y-4 ml-auto text-md text-gray-200 font-semibold lg:flex-row">
+                    <li class="mx-6 w-mc hover:text-yellow-200"><a href="/car-insurance.html">Car Insurance</a></li>
+                    <li class="mx-6 w-mc hover:text-yellow-200"><a href="/blog.html">Blog</a></li>
+                    <li class="mx-6 w-mc hover:text-yellow-200"><a href="/about.html">About</a></li>
+                    <li class="mx-6 w-mc hover:text-yellow-200"><a href="/contact.html">Contact</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+
+    <!-- Start of 'Free Broker' Landing -->
+    <section class="pt-16 border-b border-gray-600">
+        <!-- Contact Info + Form Container -->
+        <div class="w-full lg:grid lg:grid-cols-2">
+            <!-- Contact Form -->
+            <div class="flex-grow justify-center items-center py-16 lg:pt-24 lg:pb-32 lg:border-r border-gray-600">
+                <div class="flex justify-center mx-8 lg:mx-0">
+                    <div>
+                        <h2 class="text-4xl lg:text-6xl font-serif font-medium text-gray-200">Get a Free Quote</h2>
+                        <span class="inline-block mt-2 mb-4 text-gray-200">Fill out this form and we'll get back to you
+                            pronto!</span>
+                        <div class="px-8 py-4 mt-4 mb-8 rounded-md shadow-inner bg-gray-800">
+                            <h3 class="mb-2 italic text-sm text-gray-200">Or speed things up with one of these short
+                                forms:</h3>
+                            <div class="flex gap-4 flex-wrap">
+                                <a class="font-medium px-2 py-1 rounded-md shadow-sm opacity-80 transition-opacity duration-300 hover:opacity-100 text-gray-900 bg-yellow-200"
+                                    href="/car-insurance-form.html">Vehicles</a>
+                                <a class="font-medium px-2 py-1 rounded-md shadow-sm opacity-80 transition-opacity duration-300 hover:opacity-100 text-gray-900 bg-yellow-200"
+                                    href="/household-insurance-form.html">Households</a>
+                                <a class="font-medium px-2 py-1 rounded-md shadow-sm opacity-80 transition-opacity duration-300 hover:opacity-100 text-gray-900 bg-yellow-200"
+                                    href="/combined-insurance-form.html">Combined
+                                    Insurance</a>
+                            </div>
+                        </div>
+                        <!-- Form -->
+                        <form name="free-quote" data-netlify="true" autocomplete="off" netlify-honeypot="bot-field">
+                            <p class="hidden">
+                                <label>Don’t fill this out if you’re human: <input name="bot-field" /></label>
+                            </p>
+                            <div class="input-animated">
+                                <input type="text" id="name" name="name" required pattern="\S+.*"
+                                    placeholder="the placeholder" />
+                                <label htmlFor="name" class="label-name"><span class="content-name">Name</span></label>
+                            </div>
+                            <div class="input-animated">
+                                <input type="email" id="email" name="email" required placeholder="the placeholder" />
+                                <label htmlFor="email" class="label-email"><span
+                                        class="content-email">Email</span></label>
+                            </div>
+                            <div class="input-animated">
+                                <input type="text" id="policy" name="contact-number" required pattern="[0-9]+"
+                                    placeholder="the placeholder" />
+                                <label htmlFor="contact-number" class="label-name"><span
+                                        class="content-contact-number">Tel. No.
+                                    </span></label>
+                            </div>
+                            <div class="input-animated">
+                                <input type="text" id="id-number" name="id-number" required pattern="\S+.*"
+                                    placeholder="the placeholder" />
+                                <label htmlFor="id-number" class="label-name"><span class="content-id-number">ID No.
+                                        Name</span></label>
+                            </div>
+                            <div>
+                                <textarea name="address" placeholder="Your Mesage" id="address" cols="40" rows="4"
+                                    minLength="10" maxLength="100" required></textarea>
+                            </div>
+                            <button type="submit" id="submit-button"
+                                class="relative w-full font-semibold rounded-md uppercase text-center px-5 py-3 shadow-md my-4 lg:mb-0 bg-blue-800 text-white hover:bg-blue-900 focus:ring-4 focus:ring-yellow-300">Send
+                                Message</button>
+                            <span id="success"
+                                class="hidden mt-2 px-4 py-2 font-medium border rounded-sm border-green-500 bg-green-100 text-green-600">Thanks!
+                                We'll be in touch soon.</span>
+                            <span id="error"
+                                class="hidden mt-2 px-4 py-2 font-medium border rounded-sm border-red-500 bg-red-100 text-red-600">Whoops...
+                                Something went wrong.</span>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="bg-red-100 w-full h-full overflow-hidden">
+                <img class="w-full h-full object-left object-cover" src="./images/free-quote.jpg">
+            </div>
+    </section>
+
+    <!-- Client stories section -->
+    <section class="py-32 lg:py-48 px-4 md:px-6 lg:px-8 2xl:max-w-screen-2xl 2xl:mx-auto">
+        <div class="w-full flex justify-end">
+            <h2
+                class="inline-block relative top-left-line bottom-right-line pt-3 pb-4 uppercase font-semibold text-3xl lg:text-5xl font-serif tracking-wider text-gray-300">
+                Client Testimonials</h2>
+        </div>
+        <!-- All stories container -->
+        <div class="flex flex-col gap-y-48 pt-40 md:w-3/4 md:mx-auto lg:w-2/3">
+            <!-- Story -->
+            <div class="grid grid-cols-1 lg:grid-cols-2 items-center gap-x-36">
+                <p class="mt-10 lg:mt-0 order-last relative leading-relaxed quote-marks text-gray-200">Nec gravida
+                    tempus,
+                    lobortis
+                    elit
+                    augue tellus.
+                    Dolor, et ipsum
+                    porta pharetra.
+                    Risus
+                    nunc turpis vehicula
+                    sed. Volutpat
+                    mollis quam volutpat nulla pellentesque.olor, et ipsum porta pharetra. Risus nunc turpis vehicula
+                    sed.
+                    Risus
+                    nunc turpis vehicula
+                    sed. Volutpat
+                    mollis quam volutpat nulla pellentesque.olor, et ipsum porta pharetra. Risus nunc turpis vehicula
+                    sed.
+                </p>
+                <!-- Story teller -->
+                <div>
+                    <div class="h-89 rounded-lg overflow-hidden">
+                        <img class="w-full h-full object-cover" src="./images/Testimonials/man.png" alt="">
+                    </div>
+                    <div class="flex flex-col mt-1 text-sm lg:text-base"><span
+                            class="text-right font-semibold text-gray-200">Thom
+                            Yorke</span><span class="text-right text-yellow-200">Founder,
+                            Radiohead</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Story -->
+            <div class="grid grid-cols-1 lg:grid-cols-2 items-center gap-x-36">
+                <p class="mt-10 lg:mt-0 order-last lg:order-first relative leading-relaxed quote-marks text-gray-200">
+                    Nec
+                    gravida tempus,
+                    lobortis elit
+                    augue
+                    tellus.
+                    Dolor, et ipsum
+                    porta pharetra.
+                    Risus
+                    nunc turpis vehicula
+                    sed. Volutpat
+                    mollis quam volutpat nulla pellentesque.olor, et ipsum porta pharetra. Risus nunc turpis vehicula
+                    sed.
+                    Risus
+                    nunc turpis vehicula
+                    sed. Volutpat
+                    mollis quam volutpat nulla pellentesque.olor, et ipsum porta pharetra. Risus nunc turpis vehicula
+                    sed.
+                </p>
+                <!-- Story teller -->
+                <div>
+                    <div class="h-89 rounded-lg overflow-hidden">
+                        <img class="w-full h-full object-cover" src="./images/Testimonials/smiling_woman.jpg" alt="">
+                    </div>
+                    <div class="flex flex-col mt-1 text-sm lg:text-base"><span
+                            class="text-right font-semibold text-gray-200">Annaka
+                            Harris</span><span class="text-right text-yellow-200">Author, "Conscious"</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Story -->
+            <div class="grid grid-cols-1 lg:grid-cols-2 items-center gap-x-36">
+                <p class="mt-10 lg:mt-0 order-last relative leading-relaxed quote-marks text-gray-200">Nec gravida
+                    tempus,
+                    lobortis elit
+                    augue
+                    tellus.
+                    Dolor, et ipsum
+                    porta pharetra.
+                    Risus
+                    nunc turpis vehicula
+                    sed. Volutpat
+                    mollis quam volutpat nulla pellentesque.olor, et ipsum porta pharetra. Risus nunc turpis vehicula
+                    sed.
+                    Risus
+                    nunc turpis vehicula
+                    sed. Volutpat
+                    mollis quam volutpat nulla pellentesque.olor, et ipsum porta pharetra. Risus nunc turpis vehicula
+                    sed.
+                </p>
+                <!-- Story teller -->
+                <div>
+                    <div class="h-89 rounded-lg overflow-hidden">
+                        <img class="w-full h-full object-cover" src="./images/Testimonials/smiling_man_2.jpg" alt="">
+                    </div>
+                    <div class="flex flex-col mt-1 text-sm lg:text-base"><span
+                            class="text-right font-semibold text-gray-200">Rory
+                            Ferreira</span><span class="text-right text-yellow-200">MC, Scallops Hotel</span>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+    </section>
+
+
+    <!--Footer links and social media-->
+    <footer class="relative pb-16 lg:py-16 border-t border-gray-600">
+        <div class="flex flex-col items-center justify-between mx-auto max-w-screen-xl">
+            <ul
+                class="flex flex-col lg:flex-row gap-y-4 items-center text-sm font-semibold text-gray-300 py-12 lg:py-0">
+
+                <li class="mx-7 hover:text-yellow-200">
+                    <a href="/insurance-faq.html">FAQ</a>
+                </li>
+
+                <li class="mx-7 hover:text-yellow-200">
+                    <a href="/about.html">ABOUT</a>
+                </li>
+
+                <li class="mx-7 hover:text-yellow-200">
+                    <a href="/contact.html">CONTACT</a>
+                </li>
+
+                <li class="mx-7 hover:text-yellow-200">
+                    <a href="/insurance-resources.html">RESOURCES</a>
+                </li>
+
+
+                <li class="mx-7 hover:text-yellow-200">
+                    <a href="/car-insurance.html">CAR INSURANCE</a>
+                </li>
+
+                <li class="mx-7 hover:text-yellow-200">
+                    <a href="/home-insurance.html">HOME INSURANCE</a>
+                </li>
+
+                <li class="mx-7 hover:text-yellow-200">
+                    <a href="/combined-insurance.html">COMBINED INSURANCE</a>
+                </li>
+            </ul>
+
+            <div class="flex items-center mt-12 mb-6">
+                <!-- Logo SVG-->
+                <a class="ml-4 flex items-center" href="/">
+                    <svg class="fill-current text-yellow-200 h-5 w-5" width="24" height="28" viewBox="0 0 24 28"
+                        fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M12 3.33332C7.86667 3.33332 4.24 6.03999 3.06667 9.99999H20.9333C20.3596 8.07562 19.1805 6.38761 17.5712 5.18661C15.9618 3.98561 14.0081 3.33568 12 3.33332ZM12 0.666656C15.1826 0.666656 18.2348 1.93094 20.4853 4.18138C22.7357 6.43181 24 9.48406 24 12.6667H13.3333V23.3333C13.3333 24.3942 12.9119 25.4116 12.1618 26.1618C11.4116 26.9119 10.3942 27.3333 9.33333 27.3333C8.27247 27.3333 7.25505 26.9119 6.50491 26.1618C5.75476 25.4116 5.33333 24.3942 5.33333 23.3333V22H8V23.3333C8 23.6869 8.14048 24.0261 8.39052 24.2761C8.64057 24.5262 8.97971 24.6667 9.33333 24.6667C9.68696 24.6667 10.0261 24.5262 10.2761 24.2761C10.5262 24.0261 10.6667 23.6869 10.6667 23.3333V12.6667H0C0 9.48406 1.26428 6.43181 3.51472 4.18138C5.76515 1.93094 8.8174 0.666656 12 0.666656Z" />
+                    </svg>
+                    <span class="inline-block ml-2 text-xl font-semibold tracking-wider uppercase text-gray-200">The
+                        Brella
+                        Guys</span>
+                </a>
+            </div>
+
+            <div class="flex text-gray-300">
+                <!-- Twitter Logo -->
+                <a class="hover:text-yellow-200" href="/">
+                    <svg class="mx-4 fill-current h-5 w-5" width="21" height="17" viewBox="0 0 21 17" fill="none"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <title>Twitter</title>
+                        <path
+                            d="M20.92 2C20.15 2.35 19.32 2.58 18.46 2.69C19.34 2.16 20.02 1.32 20.34 0.31C19.51 0.81 18.59 1.16 17.62 1.36C16.83 0.5 15.72 0 14.46 0C12.11 0 10.19 1.92 10.19 4.29C10.19 4.63 10.23 4.96 10.3 5.27C6.74 5.09 3.57 3.38 1.46 0.79C1.09 1.42 0.88 2.16 0.88 2.94C0.88 4.43 1.63 5.75 2.79 6.5C2.08 6.5 1.42 6.3 0.84 6V6.03C0.84 8.11 2.32 9.85 4.28 10.24C3.65073 10.4122 2.9901 10.4362 2.35 10.31C2.62161 11.1625 3.15354 11.9084 3.87102 12.4429C4.5885 12.9775 5.45545 13.2737 6.35 13.29C4.83363 14.4904 2.954 15.1393 1.02 15.13C0.68 15.13 0.34 15.11 0 15.07C1.9 16.29 4.16 17 6.58 17C14.46 17 18.79 10.46 18.79 4.79C18.79 4.6 18.79 4.42 18.78 4.23C19.62 3.63 20.34 2.87 20.92 2Z" />
+                    </svg>
+                </a>
+                <!-- Facebook Logo -->
+                <a class="hover:text-yellow-200" href="/">
+                    <svg class="mx-4 fill-current h-5 w-5" width="20" height="20" viewBox="0 0 20 20" fill="none"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <title>Facebook</title>
+                        <path
+                            d="M10 0C4.5 0 0 4.49 0 10.02C0 15.02 3.66 19.17 8.44 19.92V12.92H5.9V10.02H8.44V7.81C8.44 5.3 9.93 3.92 12.22 3.92C13.31 3.92 14.45 4.11 14.45 4.11V6.58H13.19C11.95 6.58 11.56 7.35 11.56 8.14V10.02H14.34L13.89 12.92H11.56V19.92C13.9164 19.5478 16.0622 18.3455 17.6099 16.5301C19.1576 14.7146 20.0054 12.4056 20 10.02C20 4.49 15.5 0 10 0Z" />
+                    </svg>
+                </a>
+                <!-- Instagram Logo -->
+                <a class="hover:text-yellow-200" href="/">
+                    <svg class="mx-4 fill-current h-5 w-5" width="20" height="20" viewBox="0 0 20 20" fill="none"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <title>Instagram</title>
+                        <path
+                            d="M5.8 0H14.2C17.4 0 20 2.6 20 5.8V14.2C20 15.7383 19.3889 17.2135 18.3012 18.3012C17.2135 19.3889 15.7383 20 14.2 20H5.8C2.6 20 0 17.4 0 14.2V5.8C0 4.26174 0.61107 2.78649 1.69878 1.69878C2.78649 0.61107 4.26174 0 5.8 0ZM5.6 2C4.64522 2 3.72955 2.37928 3.05442 3.05442C2.37928 3.72955 2 4.64522 2 5.6V14.4C2 16.39 3.61 18 5.6 18H14.4C15.3548 18 16.2705 17.6207 16.9456 16.9456C17.6207 16.2705 18 15.3548 18 14.4V5.6C18 3.61 16.39 2 14.4 2H5.6ZM15.25 3.5C15.5815 3.5 15.8995 3.6317 16.1339 3.86612C16.3683 4.10054 16.5 4.41848 16.5 4.75C16.5 5.08152 16.3683 5.39946 16.1339 5.63388C15.8995 5.8683 15.5815 6 15.25 6C14.9185 6 14.6005 5.8683 14.3661 5.63388C14.1317 5.39946 14 5.08152 14 4.75C14 4.41848 14.1317 4.10054 14.3661 3.86612C14.6005 3.6317 14.9185 3.5 15.25 3.5ZM10 5C11.3261 5 12.5979 5.52678 13.5355 6.46447C14.4732 7.40215 15 8.67392 15 10C15 11.3261 14.4732 12.5979 13.5355 13.5355C12.5979 14.4732 11.3261 15 10 15C8.67392 15 7.40215 14.4732 6.46447 13.5355C5.52678 12.5979 5 11.3261 5 10C5 8.67392 5.52678 7.40215 6.46447 6.46447C7.40215 5.52678 8.67392 5 10 5ZM10 7C9.20435 7 8.44129 7.31607 7.87868 7.87868C7.31607 8.44129 7 9.20435 7 10C7 10.7956 7.31607 11.5587 7.87868 12.1213C8.44129 12.6839 9.20435 13 10 13C10.7956 13 11.5587 12.6839 12.1213 12.1213C12.6839 11.5587 13 10.7956 13 10C13 9.20435 12.6839 8.44129 12.1213 7.87868C11.5587 7.31607 10.7956 7 10 7Z" />
+                    </svg>
+                </a>
+            </div>
+
+
+        </div>
+
+        <div class="flex w-full justify-center gap-x-4 text-xs mt-24">
+            <a class="text-gray-400 hover:text-gray-300" href="/privacy_policy.html" rel="nofollow">Privacy
+                Policy</a>
+            <a class="text-gray-400 hover:text-gray-300" href="/terms_and_conditions.html" rel="nofollow">Terms
+                &amp;
+                Conditions</a>
+        </div>
+
+        <!-- Fine Print-->
+        <div class="flex flex-col items-center mt-4 text-xs text-gray-400">
+            <span>&copy; The Brella Guys 2021</span>
+        </div>
+    </footer>
+
+
+</body>
+
+<script src="js/nav.js"></script>
+<script src="js/form.js"></script>
+
+</html>

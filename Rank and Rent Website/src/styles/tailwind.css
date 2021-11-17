@@ -1,0 +1,199 @@
+/* Tailwind base styles, components and utilities swopped in with npm run build */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  /* #region DEFAULTS */
+  html {
+    @apply bg-gray-50 font-barlow;
+  }
+
+  /* #region Background images */
+  .hero__container {
+    background: url(../images/deck_landing.jpg);
+    @apply bg-cover bg-center;
+  }
+
+  .about_us_landing {
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+      url(../images/about_us_landing.jpg);
+    @apply bg-cover bg-center;
+  }
+
+  .composite_deck,
+  .composite_landing {
+    background-image: url(../images/composite_deck.jpg);
+    @apply bg-cover bg-center;
+  }
+
+  .hardwood_deck,
+  .hardwood_landing {
+    background-image: url(../images/hardwood_deck.jpg);
+    @apply bg-cover bg-center;
+  }
+
+  .get_quote {
+    background-image: url(../images/quote_deck.jpg);
+    @apply bg-cover bg-center;
+    clip-path: polygon(0 0, 100% 0%, 80% 100%, 0 100%);
+  }
+
+  @media screen and (max-width: 667px) {
+    .get_quote {
+      clip-path: none;
+    }
+  }
+
+  .city_select {
+    background-image: url(../images/city.jpg);
+    @apply bg-cover bg-center;
+  }
+
+  .contact_landing {
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+      url(../images/deck_extra.jpg);
+    @apply bg-cover bg-center;
+  }
+
+  .contact_form-first {
+    background: rgba(0, 0, 0, 0.5);
+  }
+
+  .contact_form-second {
+    background: rgba(0, 0, 0, 0.7);
+  }
+
+  /* #endregion */
+
+  /* #region Dropdown Reset & Animation (<details>)*/
+  details > summary::-webkit-details-marker {
+    display: none;
+  }
+
+  details > summary:first-of-type {
+    list-style-type: none;
+  }
+
+  svg {
+    transition: transform 0.2s ease-in;
+  }
+  .open summary,
+  .open summary svg {
+    @apply text-blue-500;
+  }
+
+  .open svg {
+    transform: rotate(180deg);
+  }
+
+  /* #endregion */
+
+  /* #region Extra Utilities */
+
+  /* An offest border used around images and other containers */
+  .cust_offset-border::before {
+    content: "";
+    @apply absolute w-full h-full bottom-0 left-0 border-4 border-gray-700 transform translate-x-4 translate-y-4 z-10 pointer-events-none;
+  }
+  /* #endregion */
+
+  /* #region Contact Form */
+  /* "input-animated" class refers to input where text moves/changes on focus */
+  form {
+    @apply block mt-4 overflow-hidden;
+    /*  STATUS COLOURS  */
+    --error: rgba(239, 68, 68, 1);
+    --success: rgba(16, 185, 129, 1);
+    --underline: rgba(209, 250, 229, 1);
+  }
+
+  form select {
+    @apply bg-gray-900 border py-1 px-2 rounded-sm mr-2 border-gray-400 text-gray-100;
+  }
+
+  form div {
+    @apply relative;
+  }
+
+  form .input-animated input {
+    @apply block border-none pt-5 px-4 pb-4 mb-4 w-full outline-none bg-gray-900;
+  }
+
+  form .input-animated input::placeholder {
+    @apply text-transparent;
+  }
+
+  form .input-animated input,
+  form .input-animated label {
+    @apply text-gray-100;
+  }
+
+  form .input-animated label {
+    @apply absolute top-0 w-full h-full pointer-events-none border-b border-gray-400;
+  }
+
+  form .input-animated label:after {
+    content: "";
+    bottom: -2px;
+    border-color: var(--underline);
+    @apply absolute w-full h-full border-b-2 left-0 transition duration-300 ease-linear transform -translate-x-full;
+  }
+
+  form .input-animated label span {
+    @apply absolute bottom-2 left-0;
+    transition: all 0.3s ease;
+  }
+
+  /* only works for adjacent elements below the initial element */
+  form .input-animated input:not(:placeholder-shown) + label:after,
+  form textarea:not(:placeholder-shown) {
+    border-color: var(--error);
+  }
+
+  form textarea {
+    @apply p-2 text-gray-100 bg-gray-900;
+  }
+
+  form
+    .input-animated
+    input:not(:placeholder-shown)
+    + .label-name
+    .content-name,
+  form
+    .input-animated
+    input:not(:placeholder-shown)
+    + .label-email
+    .content-email {
+    color: var(--error);
+  }
+
+  form .input-animated input:valid + .label-name .content-name,
+  form .input-animated input:valid + .label-email .content-email {
+    color: var(--success);
+  }
+
+  form .input-animated input:valid + label:after,
+  form textarea:valid {
+    border-color: var(--success);
+  }
+
+  form .input-animated input:focus + label span,
+  form .input-animated input:valid + label span,
+  form .input-animated input:not(:placeholder-shown) + label span {
+    transform: translateY(-200%);
+    @apply text-xs font-medium;
+  }
+
+  form .input-animated input:focus + label:after,
+  form input:valid + label:after,
+  form input:not(:placeholder-shown) + label:after {
+    transform: translateX(0%);
+  }
+
+  form input:invalid {
+    @apply shadow-none;
+  }
+
+  /* #endregion */
+}

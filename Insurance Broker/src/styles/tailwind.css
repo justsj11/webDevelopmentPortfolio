@@ -1,0 +1,208 @@
+/* Tailwind base styles, components and utilities swapped in with npm run build */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  html {
+    background-color: #0a0a0a;
+  }
+  /* #region Contact Form */
+  /* "input-animated" class refers to input where text moves/changes on focus */
+  form {
+    @apply block mt-4 overflow-hidden;
+    /*  STATUS COLOURS  */
+    --error: rgba(239, 68, 68, 1);
+    --success: rgba(16, 185, 129, 1);
+    --underline: rgba(243, 244, 246, 1);
+  }
+
+  form div {
+    @apply relative;
+  }
+
+  form .input-animated {
+    @apply overflow-hidden mb-4;
+  }
+
+  form .input-animated input {
+    @apply block border-none pt-5 px-4 pb-4  w-full outline-none bg-black;
+  }
+
+  form .input-animated input::placeholder {
+    @apply text-transparent;
+  }
+
+  form .input-animated input,
+  form .input-animated label {
+    @apply text-gray-200 uppercase;
+  }
+
+  form .input-animated label {
+    @apply absolute top-0 w-full h-full pointer-events-none border-b-2 border-gray-500;
+  }
+
+  form .input-animated label:after {
+    content: '';
+    bottom: -2px;
+    border-color: var(--underline);
+    @apply absolute w-full h-full border-b-2 left-0 transition duration-300 ease-linear transform -translate-x-full;
+  }
+
+  form .input-animated label span {
+    @apply absolute bottom-2 left-0;
+    transition: all 0.3s ease;
+  }
+
+  /* only works for adjacent elements below the initial element */
+
+  form .input-animated input:not(:placeholder-shown) + label:after,
+  form textarea:not(:placeholder-shown) {
+    border-color: var(--error);
+  }
+
+  form .input-animated input:not(:placeholder-shown) + .label .content {
+    color: var(--error);
+  }
+
+  form .input-animated input:valid + .label .content {
+    color: var(--success);
+  }
+
+  form .input-animated input:valid + label:after,
+  form textarea:valid {
+    border-color: var(--success);
+  }
+
+  form .input-animated input:focus + label span,
+  form .input-animated input:valid + label span,
+  form .input-animated input:not(:placeholder-shown) + label span {
+    transform: translateY(-200%);
+    @apply text-xs font-medium;
+  }
+
+  form .input-animated input:focus + label:after,
+  form input:valid + label:after,
+  form input:not(:placeholder-shown) + label:after {
+    transform: translateX(0%);
+  }
+
+  form input:invalid {
+    @apply shadow-none;
+  }
+
+  /* TEXTAREA ONLY */
+  form textarea {
+    @apply w-full mt-8 border border-gray-600 bg-black;
+  }
+
+  form textarea:focus {
+    @apply outline-none;
+    box-shadow: inset 0px 0px 1px 1px var(--underline);
+  }
+
+  form textarea:not(:placeholder-shown) {
+    box-shadow: inset 0px 0px 1px 1px var(--error);
+  }
+
+  form textarea:valid {
+    box-shadow: inset 0px 0px 1px 1px var(--success);
+  }
+
+  form textarea.not_required {
+    @apply shadow-none;
+  }
+
+  form textarea:invalid {
+    @apply shadow-none;
+  }
+
+  form textarea {
+    @apply text-gray-200 py-3 px-4;
+  }
+
+  form textarea::placeholder {
+    @apply text-gray-300 text-sm;
+  }
+  /* #endregion */
+
+  /* #region Dropdown Reset & Animation (<details>)*/
+  details > summary::-webkit-details-marker {
+    display: none;
+  }
+
+  details > summary:first-of-type {
+    list-style-type: none;
+  }
+  /* #endregion */
+
+  /* #region Applied to FAQ dropdown on toggle open */
+  svg {
+    transition: transform 0.2s ease-in;
+  }
+  .open summary,
+  .open summary svg {
+    @apply text-yellow-200;
+  }
+
+  .open svg {
+    transform: rotate(180deg);
+  }
+
+  /* #endregion */
+
+  /* #region Extra Utilities */
+  .bg-text-clip {
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  /* #endregion */
+}
+
+@layer utilities {
+  .text-stroke {
+    -webkit-text-stroke: 1px white;
+  }
+
+  .yellow-stroke {
+    -webkit-text-stroke-color: #fcd34d;
+  }
+
+  .thick-stroke {
+    -webkit-text-stroke-width: 2px;
+  }
+
+  /* Used on headers */
+  .top-left-line::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 50%;
+    height: 3px;
+    @apply bg-yellow-300 opacity-80;
+  }
+
+  /* Used on headers */
+  .bottom-right-line::after {
+    content: '';
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    width: 50%;
+    height: 3px;
+    @apply bg-blue-800;
+  }
+
+  .quote-marks::before {
+    content: '\“';
+    @apply absolute font-serif text-10xl opacity-30 top-0 left-0 -m-0 -mt-24 lg:-m-20 text-black;
+    @apply yellow-stroke thick-stroke;
+  }
+
+  .quote-marks::after {
+    content: '\”';
+    @apply absolute font-serif text-10xl opacity-30 top-0 right-0 mt-28 text-black;
+    @apply yellow-stroke thick-stroke;
+  }
+}

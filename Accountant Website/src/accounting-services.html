@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta content="IE=edge" http-equiv="X-UA-Compatible" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- Meta Description -->
+  <meta content="" name="description" />
+
+  <!-- CSS Stylesheets -->
+  <link rel="stylesheet" href="styles/index.css" />
+
+  <!--Font Styles -->
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link
+    href="https://fonts.googleapis.com/css2?family=IBM+Plex+Serif:wght@700&family=Work+Sans:wght@400;500;600;700&display=swap"
+    rel="stylesheet">
+
+  <!--FAVICON-->
+  <link href="images/accounting-favicon.ico" rel="icon" />
+  <title>Tailwind Accountant</title>
+</head>
+
+<body>
+
+  <!-- Start of header -->
+  <header class="fixed w-full bg-gray-50 z-50 shadow-md">
+    <nav class="max-w-screen-2xl flex flex-row flex-wrap justify-between my-3 ml-auto mr-auto " role="navigation">
+      <!-- COMPANY LOGO (SVG) -->
+      <div class="flex items-center ml-3">
+        <a href="">
+          <svg class="h-6 lg:h-8" viewBox="0 0 184 31" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="14.5" cy="16.5" r="14.5" fill="#3183C8" />
+            <path
+              d="m17.065 16.178-1.9849 2.7067-0.9022-1.2631-0.9022 1.2631-1.9849-2.7067c-3.4285 0.9022-3.4285 2.7067-3.4285 6.2253 0 0 2.7067 0.9925 5.7743 0.9925h1.0826c3.0676-0.0902 5.7743-0.9925 5.7743-0.9925 0-3.5186 0-5.3231-3.4285-6.2253zm-2.8871 0.6316-1.4436-0.6316 1.4436 1.4436 1.4436-1.4436-1.4436 0.6316z"
+              fill="#EFF8FF" />
+            <path
+              d="m14.178 9.0502c-1.7142 0-2.7066 1.624-2.436 3.4285 0.2707 1.8044 1.1729 3.0675 2.436 3.0675s2.1654-1.2631 2.436-3.0675c0.2707-1.8947-0.7218-3.4285-2.436-3.4285z"
+              fill="#EFF8FF" />
+            <path
+              d="m34.176 23.704h1.752v-14.16h-1.752v-1.296h4.992l4.416 9.384h0.072l4.44-9.384h4.896v1.296h-1.752v14.16h1.752v1.296h-6.336v-1.296h1.752v-12.816h-0.12l-1.2 2.832-4.152 8.568-4.128-8.568-1.2-2.832h-0.12v12.816h1.752v1.296h-5.064v-1.296zm26.852 0.168c1.008 0 1.744-0.312 2.208-0.936 0.48-0.624 0.72-1.456 0.72-2.496v-3.36c0-1.04-0.24-1.872-0.72-2.496-0.464-0.624-1.2-0.936-2.208-0.936s-1.752 0.312-2.232 0.936c-0.464 0.624-0.696 1.456-0.696 2.496v3.36c0 1.04 0.232 1.872 0.696 2.496 0.48 0.624 1.224 0.936 2.232 0.936zm0 1.416c-0.88 0-1.68-0.152-2.4-0.456s-1.336-0.736-1.848-1.296-0.912-1.24-1.2-2.04c-0.272-0.816-0.408-1.728-0.408-2.736s0.136-1.912 0.408-2.712c0.288-0.816 0.688-1.504 1.2-2.064s1.128-0.992 1.848-1.296 1.52-0.456 2.4-0.456 1.68 0.152 2.4 0.456 1.336 0.736 1.848 1.296 0.904 1.248 1.176 2.064c0.288 0.8 0.432 1.704 0.432 2.712s-0.144 1.92-0.432 2.736c-0.272 0.8-0.664 1.48-1.176 2.04s-1.128 0.992-1.848 1.296-1.52 0.456-2.4 0.456zm7.9263-1.584h1.632v-9.264l-1.632-0.312v-1.056l4.248-0.84v2.232h0.12c0.096-0.272 0.24-0.544 0.432-0.816 0.208-0.272 0.456-0.512 0.744-0.72 0.304-0.208 0.648-0.376 1.032-0.504 0.4-0.128 0.848-0.192 1.344-0.192 1.52 0 2.6 0.392 3.24 1.176 0.64 0.768 0.96 1.928 0.96 3.48v6.816h1.632v1.296h-5.904v-1.296h1.584v-6.672c0-1.04-0.2-1.8-0.6-2.28s-1.032-0.72-1.896-0.72c-0.32 0-0.64 0.048-0.96 0.144-0.304 0.08-0.584 0.216-0.84 0.408-0.24 0.176-0.44 0.4-0.6 0.672-0.144 0.272-0.216 0.6-0.216 0.984v7.464h1.584v1.296h-5.904v-1.296zm21.346 1.584c-0.928 0-1.752-0.152-2.472-0.456-0.72-0.32-1.328-0.768-1.824-1.344s-0.88-1.264-1.152-2.064c-0.256-0.8-0.384-1.688-0.384-2.664 0-0.992 0.136-1.888 0.408-2.688 0.288-0.8 0.68-1.48 1.176-2.04 0.512-0.576 1.112-1.016 1.8-1.32 0.704-0.32 1.472-0.48 2.304-0.48 0.848 0 1.608 0.144 2.28 0.432 0.672 0.272 1.24 0.664 1.704 1.176 0.48 0.512 0.848 1.128 1.104 1.848s0.384 1.52 0.384 2.4v0.648h-8.256v0.768c0 1.248 0.312 2.216 0.936 2.904 0.624 0.672 1.464 1.008 2.52 1.008 0.928 0 1.672-0.2 2.232-0.6 0.576-0.416 1-0.928 1.272-1.536l1.032 0.624c-0.144 0.416-0.36 0.824-0.648 1.224-0.272 0.4-0.616 0.76-1.032 1.08s-0.904 0.584-1.464 0.792c-0.56 0.192-1.2 0.288-1.92 0.288zm-2.928-7.824h5.472v-0.264c0-1.152-0.224-2.04-0.672-2.664-0.432-0.64-1.104-0.96-2.016-0.96-0.896 0-1.584 0.312-2.064 0.936-0.48 0.608-0.72 1.488-0.72 2.64v0.312zm12.001 12.624c-0.864 0-1.52-0.2-1.968-0.6-0.432-0.4-0.648-0.896-0.648-1.488 0-0.496 0.128-0.888 0.384-1.176 0.272-0.272 0.648-0.408 1.128-0.408 0.448 0 0.792 0.136 1.032 0.408 0.256 0.272 0.384 0.616 0.384 1.032 0 0.24-0.056 0.448-0.168 0.624-0.096 0.192-0.208 0.328-0.336 0.408v0.096c0.08 0.032 0.152 0.048 0.216 0.048h0.288c0.8641 0 1.6081-0.808 2.2321-2.424l0.384-1.056-4.5601-11.736h-1.2v-1.296h5.6881v1.296h-1.608l2.976 8.328h0.12l2.952-8.328h-1.584v-1.296h4.392v1.296h-1.2l-5.016 12.912c-0.176 0.432-0.384 0.848-0.624 1.248-0.224 0.416-0.496 0.776-0.816 1.08-0.304 0.32-0.656 0.568-1.056 0.744-0.4 0.192-0.8641 0.288-1.3921 0.288zm14.871-6.384h2.232v-14.04h-3.744v2.808h-2.184v-4.224h14.712v4.224h-2.184v-2.808h-3.744v14.04h2.232v1.296h-7.32v-1.296zm12.53 0h1.632v-9.264l-1.632-0.312v-1.056l4.248-0.84v2.232h0.12c0.112-0.288 0.248-0.56 0.408-0.816 0.176-0.272 0.384-0.512 0.624-0.72 0.256-0.208 0.544-0.376 0.864-0.504 0.336-0.128 0.712-0.192 1.128-0.192 0.736 0 1.32 0.184 1.752 0.552 0.448 0.368 0.672 0.896 0.672 1.584 0 0.544-0.144 0.976-0.432 1.296-0.272 0.304-0.648 0.456-1.128 0.456-0.496 0-0.888-0.128-1.176-0.384-0.272-0.272-0.408-0.608-0.408-1.008 0-0.272 0.056-0.496 0.168-0.672 0.112-0.192 0.248-0.304 0.408-0.336v-0.072c-0.048-0.016-0.104-0.024-0.168-0.024-0.064-0.016-0.16-0.024-0.288-0.024-0.304 0-0.608 0.08-0.912 0.24-0.288 0.16-0.552 0.368-0.792 0.624-0.224 0.24-0.408 0.52-0.552 0.84-0.144 0.304-0.216 0.608-0.216 0.912v7.488h2.112v1.296h-6.432v-1.296zm14.805 1.584c-1.248 0-2.192-0.304-2.832-0.912-0.624-0.624-0.936-1.472-0.936-2.544 0-1.216 0.432-2.136 1.296-2.76s2.272-0.936 4.224-0.936h1.728v-1.632c0-0.976-0.216-1.72-0.648-2.232s-1.112-0.768-2.04-0.768c-0.784 0-1.376 0.112-1.776 0.336v0.096c0.176 0.08 0.336 0.224 0.48 0.432 0.16 0.192 0.24 0.464 0.24 0.816 0 0.448-0.136 0.808-0.408 1.08-0.256 0.272-0.632 0.408-1.128 0.408-0.416 0-0.768-0.136-1.056-0.408-0.272-0.288-0.408-0.672-0.408-1.152 0-0.368 0.104-0.72 0.312-1.056 0.224-0.352 0.544-0.664 0.96-0.936s0.92-0.488 1.512-0.648c0.608-0.16 1.304-0.24 2.088-0.24 1.504 0 2.64 0.352 3.408 1.056s1.152 1.688 1.152 2.952v7.488h1.632v1.08c-0.224 0.128-0.512 0.24-0.864 0.336s-0.728 0.144-1.128 0.144c-0.736 0-1.28-0.184-1.632-0.552-0.336-0.384-0.504-0.872-0.504-1.464v-0.12h-0.12c-0.112 0.272-0.256 0.536-0.432 0.792-0.176 0.24-0.408 0.464-0.696 0.672-0.272 0.208-0.608 0.368-1.008 0.48-0.4 0.128-0.872 0.192-1.416 0.192zm1.056-1.68c0.704 0 1.28-0.168 1.728-0.504 0.464-0.336 0.696-0.888 0.696-1.656v-2.136h-1.44c-1.136 0-1.928 0.184-2.376 0.552s-0.672 0.896-0.672 1.584v0.456c0 0.576 0.184 1.008 0.552 1.296 0.368 0.272 0.872 0.408 1.512 0.408zm14.345 1.68c-0.944 0-1.784-0.16-2.52-0.48-0.72-0.32-1.328-0.768-1.824-1.344s-0.872-1.264-1.128-2.064-0.384-1.68-0.384-2.64c0-1.024 0.152-1.936 0.456-2.736 0.304-0.816 0.728-1.504 1.272-2.064s1.184-0.984 1.92-1.272c0.752-0.304 1.568-0.456 2.448-0.456 1.376 0 2.448 0.288 3.216 0.864 0.784 0.576 1.176 1.312 1.176 2.208 0 0.56-0.152 1-0.456 1.32-0.304 0.304-0.712 0.456-1.224 0.456-0.528 0-0.928-0.144-1.2-0.432-0.272-0.304-0.408-0.68-0.408-1.128 0-0.368 0.096-0.688 0.288-0.96s0.44-0.472 0.744-0.6v-0.12c-0.192-0.08-0.432-0.152-0.72-0.216-0.288-0.08-0.648-0.12-1.08-0.12-0.528 0-1.008 0.096-1.44 0.288s-0.8 0.464-1.104 0.816c-0.304 0.336-0.544 0.744-0.72 1.224-0.16 0.48-0.24 1.016-0.24 1.608v2.088c0 1.2 0.296 2.152 0.888 2.856 0.592 0.688 1.4 1.032 2.424 1.032 0.96 0 1.704-0.208 2.232-0.624 0.544-0.416 0.96-0.928 1.248-1.536l1.032 0.624c-0.144 0.416-0.352 0.824-0.624 1.224s-0.608 0.768-1.008 1.104c-0.4 0.32-0.872 0.584-1.416 0.792-0.544 0.192-1.16 0.288-1.848 0.288zm6.466-1.584h1.632v-14.736l-1.632-0.312v-1.056l4.32-0.84v12.288h0.12l1.776-2.016 2.952-3.216h-1.56v-1.296h5.304v1.296h-1.776l-3.168 3.264 4.248 6.624h1.224v1.296h-5.592v-1.296h1.344l-3.024-4.92-1.848 1.944v2.976h1.584v1.296h-5.904v-1.296z"
+              fill="#3183C8" />
+          </svg>
+        </a>
+      </div>
+      <div class="inline-block h-8 mr-3 lg:hidden">
+        <button id="nav_toggle" class="h-full w-full">
+          <svg class="h-full w-auto" xmlns="http://www.w3.org/2000/svg" width="192" height="192" fill="#3b82f6"
+            viewBox="0 0 256 256">
+            <rect width="256" height="256" fill="none"></rect>
+            <line x1="40" y1="128" x2="216" y2="128" stroke="#3b82f6" stroke-linecap="round" stroke-linejoin="round"
+              stroke-width="16"></line>
+            <line x1="40" y1="64" x2="216" y2="64" stroke="#3b82f6" stroke-linecap="round" stroke-linejoin="round"
+              stroke-width="16"></line>
+            <line x1="40" y1="192" x2="216" y2="192" stroke="#3b82f6" stroke-linecap="round" stroke-linejoin="round"
+              stroke-width="16"></line>
+          </svg>
+        </button>
+      </div>
+      <div id="nav_content" class="w-full hidden py-8 mr-3 lg:flex lg:w-auto lg:py-0 lg:items-center">
+        <ul class="flex flex-col ml-auto font-medium text-sm text-gray-600 lg:flex-row">
+          <li class="mx-6 w-mc font-semibold text-blue-500 mb-4 lg:mb-0">
+            <a href="/accounting-services.html">ACCOUNTING SERVICES</a>
+          </li>
+
+          <li class="mx-6 w-mc hover:text-blue-500 mb-4 lg:mb-0">
+            <a href="/accounting-resources.html">RESOURCES</a>
+          </li>
+
+          <li class="mx-6 w-mc hover:text-blue-500 mb-4 lg:mb-0"><a href="/blog.html">BLOG</a></li>
+
+          <li class="mx-6 w-mc hover:text-blue-500 mb-4 lg:mb-0"><a href="/about.html">ABOUT</a></li>
+
+          <li class="mx-6 w-mc hover:text-blue-500 mb-4 lg:mb-0"><a href="/contact.html">CONTACT</a></li>
+        </ul>
+        <a class="inline-block p-2 font-medium text-sm border mt-2 lg:mt-0 text-blue-500 border-blue-500 ml-6 hover:bg-blue-500 hover:text-blue-50"
+          href="/contact.html">GET IN TOUCH</a>
+      </div>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Start of 'Services' Landing -->
+  <section class="flex px-8 lg:px-0 justify-center bg-gray-100">
+    <div class="flex flex-col lg:flex-row items-center max-w-screen-xl lg:px-8">
+      <div class="pt-32 pb-20 lg:pt-44 lg:pb-32 lg:pr-16 ">
+        <h1 class="text-xs lg:text-base uppercase font-bold mb-2 lg:mb-4 text-gray-400">SERVICES</h1>
+        <h2 class="font-semibold text-3xl lg:text-5xl text-gray-700 mb-8">How We Can Help You</h2>
+        <p class="text-xl lg:text-2xl max-w-prose leading-relaxed text-gray-600">Lorem ipsum dolor sit amet, consectetur
+          adipiscing elit. Maecenas sed pharetra magna tortor at ultrices nisi id orci.</p>
+      </div>
+      <!-- Services Overlapping Image -->
+      <div class="lg:pt-28 -mb-12 lg:-mb-16 w-full lg:w-1/2">
+        <img class="max-h-full object-cover shadow-lg " src="./images/services.jpg" alt="An ecstatic man.">
+      </div>
+    </div>
+  </section>
+
+  <!-- Start of Services-->
+  <section class="pt-36 lg:py-72 -mt-8 mx-6 md:mx-32 lg:mx-auto max-w-screen-xl">
+    <!-- Service 1 -->
+    <div id="service1" class="mt-20 lg:mb-72">
+      <div class="font-plexSerif font-bold flex flex-col lg:flex-row lg:mb-36">
+        <span class="text-5xl lg:text-7xl lg:mr-22 mb-4 lg:mb-0 text-gray-300">#1</span>
+        <span class="text-2xl  lg:text-5xl lg:mr-40 text-gray-700">Accounting services that'll set you apart from your
+          competitors.</span>
+      </div>
+      <div class="flex flex-col lg:flex-row">
+        <div class="hidden w-full lg:block lg:mr-20 shadow-lg">
+          <img class="w-full h-full object-cover" src="./images/service-1.png" alt="A small golden trophy">
+        </div>
+        <div class="w-full mt-8 lg:mt-0">
+          <p class="text-lg lg:text-2xl font-medium mb-8 text-gray-600">
+            Lorem ipsum dolor sit amet. Consectetur adipiscing elit maecenas sed pharetra magna tortor.
+          </p>
+          <p class="text-gray-500 leading-loose">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Facilisis gravida sagittis purus eget vitae
+            faucibus sed tortor blandit. Tristique sit viverra posuere vestibulum bibendum donec. Placerat amet tellus
+            mauris quis aliquet fames aliquam. Sagittis, morbi suspendisse vitae mollis bibendum. Dolor, vitae, amet
+            purus feugiat malesuada molestie. Nibh malesuada viverra turpis id. Euismod molestie fermentum volutpat
+            bibendum arcu cursus non. Augue leo sollicitudin ut pretium quis et cursus nunc. Tristique sit viverra
+            posuere vestibulum bibendum donec. Placerat amet tellus mauris quis aliquet fames aliquam.
+          </p>
+          <div class="flex justify-center mt-8 mb-32 lg:hidden">
+            <div class="inline-block rounded-full p-3 bg-blue-100 mb-2">
+              <svg class="h-5 w-5" width="32" height="32" viewBox="0 0 32 32" fill="none"
+                xmlns="http://www.w3.org/  2000/svg">
+                <path
+                  d="M16.96 14.4C16.32 14.24 15.68 13.9199 15.2 13.4399C14.72 13.28 14.56 12.8 14.56 12.48C14.56 12.16 14.72 11.68 15.04 11.5199C15.52 11.2 16 10.88 16.48 11.04C17.44 11.04 18.24 11.52 18.72 12.16L20.16 10.24C19.68 9.75995 19.2 9.43995 18.72 9.11995C18.24 8.79995 17.6 8.63995 16.96 8.63995V6.39995H15.04V8.63995C14.24 8.79995 13.44 9.27995 12.8 9.91995C12.16 10.72 11.68 11.68 11.84 12.64C11.84 13.6 12.16 14.56 12.8 15.2C13.6 16 14.72 16.48 15.68 16.96C16.16 17.12 16.8 17.44 17.28 17.76C17.6 18.08 17.76 18.5599 17.76 19.0399C17.76 19.5199 17.6 20 17.28 20.4799C16.8 20.9599 16.16 21.1199 15.68 21.1199C15.04 21.1199 14.24 20.9599 13.76 20.4799C13.28 20.16 12.8 19.68 12.48 19.2L10.88 20.96C11.36 21.6 11.84 22.08 12.48 22.5599C13.28 23.04 14.24 23.5199 15.2 23.5199V25.5999H16.96V23.1999C17.92 23.0399 18.72 22.5599 19.36 21.92C20.16 21.1199 20.64 19.84 20.64 18.7199C20.64 17.7599 20.32 16.64 19.52 16C18.72 15.2 17.92 14.72 16.96 14.4ZM16 3.19995C8.96 3.19995 3.2 8.95995 3.2 16C3.2 23.0399 8.96 28.7999 16 28.7999C23.04 28.7999 28.8 23.0399 28.8 16C28.8 8.95995 23.04 3.19995 16 3.19995ZM16 27.0399C9.92 27.0399 4.96 22.08 4.96 16C4.96 9.91995 9.92 4.95995 16 4.95995C22.08 4.95995 27.04 9.91995 27.04 16C27.04 22.08 22.08 27.0399 16 27.0399Z"
+                  fill="#2368A2" />
+              </svg>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Service 2 -->
+    <div id="service2" class="mt-20 lg:mb-72">
+      <div class="font-plexSerif font-bold flex flex-col lg:flex-row-reverse lg:mb-36">
+        <span class="text-5xl lg:text-7xl mb-4 lg:mb-0 text-gray-300">#2</span>
+        <span class="text-2xl  lg:text-5xl lg:mr-22 text-gray-700">Another brilliant service that you will benefit a
+          great deal from.</span>
+      </div>
+      <div class="flex flex-col lg:flex-row-reverse">
+        <div class="hidden w-full lg:block lg:ml-20">
+          <img class="w-full h-full object-cover" src="./images/service-1.png" alt="A small golden trophy">
+        </div>
+        <div class="w-full mt-8 lg:mt-0">
+          <p class="text-lg lg:text-2xl font-medium mb-8 text-gray-600">
+            Lorem ipsum dolor sit amet. Consectetur adipiscing elit maecenas sed pharetra magna tortor.
+          </p>
+          <p class="text-gray-500 leading-loose">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Facilisis gravida sagittis purus eget vitae
+            faucibus sed tortor blandit. Tristique sit viverra posuere vestibulum bibendum donec. Placerat amet tellus
+            mauris quis aliquet fames aliquam. Sagittis, morbi suspendisse vitae mollis bibendum. Dolor, vitae, amet
+            purus feugiat malesuada molestie. Nibh malesuada viverra turpis id. Euismod molestie fermentum volutpat
+            bibendum arcu cursus non. Augue leo sollicitudin ut pretium quis et cursus nunc. Tristique sit viverra
+            posuere vestibulum bibendum donec. Placerat amet tellus mauris quis aliquet fames aliquam.
+          </p>
+          <div class="flex justify-center mt-8 mb-32 lg:hidden">
+            <div class="inline-block rounded-full p-3 bg-blue-100 mb-2">
+              <svg class="h-5 w-5" width="32" height="32" viewBox="0 0 32 32" fill="none"
+                xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M7.99999 2.66663C7.29275 2.66663 6.61447 2.94758 6.11438 3.44767C5.61428 3.94777 5.33333 4.62605 5.33333 5.33329V26.6666C5.33333 27.3739 5.61428 28.0521 6.11438 28.5522C6.61447 29.0523 7.29275 29.3333 7.99999 29.3333H24C24.7072 29.3333 25.3855 29.0523 25.8856 28.5522C26.3857 28.0521 26.6667 27.3739 26.6667 26.6666V10.6666L18.6667 2.66663H7.99999ZM7.99999 5.33329H17.3333V12H24V26.6666H7.99999V5.33329ZM10.6667 16V18.6666H21.3333V16H10.6667ZM10.6667 21.3333V24H17.3333V21.3333H10.6667Z"
+                  fill="#2368A2" />
+              </svg>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Service 3 -->
+    <div id="service3" class="mt-20 lg:mb-72">
+      <div class="font-plexSerif font-bold flex flex-col lg:flex-row lg:mb-36">
+        <span class="text-5xl lg:text-7xl lg:mr-22 mb-4 lg:mb-0 text-gray-300">#3</span>
+        <span class="text-2xl  lg:text-5xl lg:mr-40 text-gray-700">Another brilliant service that you will benefit a
+          great deal from.</span>
+      </div>
+      <div class="flex flex-col lg:flex-row">
+        <div class="hidden w-full lg:block lg:mr-20 shadow-lg">
+          <img class="w-full h-full object-cover" src="./images/service-1.png" alt="A small golden trophy">
+        </div>
+        <div class="w-full mt-8 lg:mt-0">
+          <p class="text-lg lg:text-2xl font-medium mb-8 text-gray-600">
+            Lorem ipsum dolor sit amet. Consectetur adipiscing elit maecenas sed pharetra magna tortor.
+          </p>
+          <p class="text-gray-500 leading-loose">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Facilisis gravida sagittis purus eget vitae
+            faucibus sed tortor blandit. Tristique sit viverra posuere vestibulum bibendum donec. Placerat amet tellus
+            mauris quis aliquet fames aliquam. Sagittis, morbi suspendisse vitae mollis bibendum. Dolor, vitae, amet
+            purus feugiat malesuada molestie. Nibh malesuada viverra turpis id. Euismod molestie fermentum volutpat
+            bibendum arcu cursus non. Augue leo sollicitudin ut pretium quis et cursus nunc. Tristique sit viverra
+            posuere vestibulum bibendum donec. Placerat amet tellus mauris quis aliquet fames aliquam.
+          </p>
+          <div class="flex justify-center mt-8 mb-32 lg:hidden">
+            <div class="inline-block rounded-full p-3 bg-blue-100 mb-2">
+              <svg class="h-5 w-5" width="32" height="32" viewBox="0 0 32 32" fill="none"
+                xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M5.33333 8.00004H26.6667V21.3334H5.33333V8.00004ZM26.6667 24C27.3739 24 28.0522 23.7191 28.5523 23.219C29.0524 22.7189 29.3333 22.0406 29.3333 21.3334V8.00004C29.3333 7.2928 29.0524 6.61452 28.5523 6.11442C28.0522 5.61433 27.3739 5.33337 26.6667 5.33337H5.33333C3.85333 5.33337 2.66667 6.52004 2.66667 8.00004V21.3334C2.66667 22.0406 2.94762 22.7189 3.44772 23.219C3.94781 23.7191 4.62609 24 5.33333 24H0V26.6667H32V24H26.6667Z"
+                  fill="#2368A2" />
+              </svg>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Service 4 -->
+    <div id="service4" class="mt-20 lg:mb-72">
+      <div class="font-plexSerif font-bold flex flex-col lg:flex-row-reverse lg:mb-36">
+        <span class="text-5xl lg:text-7xl lg:mr-22 mb-4 lg:mb-0 text-gray-300">#4</span>
+        <span class="text-2xl  lg:text-5xl lg:mr-40 text-gray-700">Another brilliant service that you will benefit a
+          great deal from.</span>
+      </div>
+      <div class="flex flex-col lg:flex-row-reverse">
+        <div class="hidden w-full lg:block lg:ml-20 shadow-lg">
+          <img class="w-full h-full object-cover" src="./images/service-1.png" alt="A small golden trophy">
+        </div>
+        <div class="w-full mt-8 lg:mt-0">
+          <p class="text-lg lg:text-2xl font-medium mb-8 text-gray-600">
+            Lorem ipsum dolor sit amet. Consectetur adipiscing elit maecenas sed pharetra magna tortor.
+          </p>
+          <p class="text-gray-500 leading-loose">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Facilisis gravida sagittis purus eget vitae
+            faucibus sed tortor blandit. Tristique sit viverra posuere vestibulum bibendum donec. Placerat amet tellus
+            mauris quis aliquet fames aliquam. Sagittis, morbi suspendisse vitae mollis bibendum. Dolor, vitae, amet
+            purus feugiat malesuada molestie. Nibh malesuada viverra turpis id. Euismod molestie fermentum volutpat
+            bibendum arcu cursus non. Augue leo sollicitudin ut pretium quis et cursus nunc. Tristique sit viverra
+            posuere vestibulum bibendum donec. Placerat amet tellus mauris quis aliquet fames aliquam.
+          </p>
+          <div class="flex justify-center mt-8 mb-32 lg:hidden">
+            <div class="inline-block rounded-full p-3 bg-blue-100 mb-2">
+              <svg class="h-5 w-5" width="31" height="20" viewBox="0 0 31 20" fill="none"
+                xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M16.3333 8.66663C17.1245 8.66663 17.8978 8.43203 18.5556 7.99251C19.2134 7.55298 19.7261 6.92827 20.0288 6.19736C20.3316 5.46646 20.4108 4.66219 20.2565 3.88627C20.1021 3.11034 19.7212 2.39761 19.1618 1.8382C18.6023 1.27879 17.8896 0.897828 17.1137 0.743487C16.3378 0.589146 15.5335 0.668359 14.8026 0.97111C14.0717 1.27386 13.447 1.78655 13.0074 2.44435C12.5679 3.10214 12.3333 3.8755 12.3333 4.66663C12.3333 5.72749 12.7548 6.74491 13.5049 7.49506C14.255 8.2452 15.2725 8.66663 16.3333 8.66663ZM16.3333 3.33329C16.597 3.33329 16.8548 3.41149 17.0741 3.558C17.2934 3.70451 17.4643 3.91275 17.5652 4.15638C17.6661 4.40002 17.6925 4.66811 17.641 4.92675C17.5896 5.18539 17.4626 5.42297 17.2761 5.60944C17.0897 5.79591 16.8521 5.92289 16.5934 5.97434C16.3348 6.02579 16.0667 5.99938 15.8231 5.89847C15.5794 5.79755 15.3712 5.62665 15.2247 5.40739C15.0782 5.18812 15 4.93034 15 4.66663C15 4.31301 15.1405 3.97387 15.3905 3.72382C15.6406 3.47377 15.9797 3.33329 16.3333 3.33329ZM21.8133 8.47996C22.5934 7.36133 23.0116 6.03038 23.0116 4.66663C23.0116 3.30287 22.5934 1.97192 21.8133 0.853294C22.1968 0.729845 22.5971 0.666869 23 0.666627C24.0609 0.666627 25.0783 1.08805 25.8284 1.8382C26.5786 2.58835 27 3.60576 27 4.66663C27 5.72749 26.5786 6.74491 25.8284 7.49506C25.0783 8.2452 24.0609 8.66663 23 8.66663C22.5971 8.66639 22.1968 8.60341 21.8133 8.47996ZM16.3333 11.3333C8.33333 11.3333 8.33333 16.6666 8.33333 16.6666V19.3333H24.3333V16.6666C24.3333 16.6666 24.3333 11.3333 16.3333 11.3333ZM11 16.6666C11 16.28 11.4267 14 16.3333 14C21 14 21.5867 16.08 21.6667 16.6666H11ZM31 16.6666V19.3333H27V16.6666C26.9688 15.6755 26.7406 14.7005 26.3285 13.7985C25.9164 12.8965 25.3288 12.0857 24.6 11.4133C31 12.0666 31 16.6666 31 16.6666ZM8.78666 5.89329L10.3333 7.77329L3.99999 14.1066L0.333328 10.1066L1.87999 8.55996L3.99999 10.6666L8.78666 5.89329Z"
+                  fill="#2368A2" />
+              </svg>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Service 5 -->
+    <div id="service5" class="mt-20 lg:mb-72">
+      <div class="font-plexSerif font-bold flex flex-col lg:flex-row lg:mb-36">
+        <span class="text-5xl lg:text-7xl lg:mr-22 mb-4 lg:mb-0 text-gray-300">#5</span>
+        <span class="text-2xl  lg:text-5xl lg:mr-40 text-gray-700">Another brilliant service that you will benefit a
+          great deal from.</span>
+      </div>
+      <div class="flex flex-col lg:flex-row">
+        <div class="hidden w-full lg:block lg:mr-20 shadow-lg">
+          <img class="w-full h-full object-cover" src="./images/service-1.png" alt="A small golden trophy">
+        </div>
+        <div class="w-full mt-8 lg:mt-0">
+          <p class="text-lg lg:text-2xl font-medium mb-8 text-gray-600">
+            Lorem ipsum dolor sit amet. Consectetur adipiscing elit maecenas sed pharetra magna tortor.
+          </p>
+          <p class="text-gray-500 leading-loose">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Facilisis gravida sagittis purus eget vitae
+            faucibus sed tortor blandit. Tristique sit viverra posuere vestibulum bibendum donec. Placerat amet tellus
+            mauris quis aliquet fames aliquam. Sagittis, morbi suspendisse vitae mollis bibendum. Dolor, vitae, amet
+            purus feugiat malesuada molestie. Nibh malesuada viverra turpis id. Euismod molestie fermentum volutpat
+            bibendum arcu cursus non. Augue leo sollicitudin ut pretium quis et cursus nunc. Tristique sit viverra
+            posuere vestibulum bibendum donec. Placerat amet tellus mauris quis aliquet fames aliquam.
+          </p>
+          <div class="flex justify-center mt-8 mb-32 lg:hidden">
+            <div class="inline-block rounded-full p-3 bg-blue-100 mb-2">
+              <svg class="h-5 w-5" width="32" height="32" viewBox="0 0 32 32" fill="none"
+                xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M26.3867 20.5466C27.6533 17.6533 27.6533 14.3333 26.3867 11.4533L22.7333 13.1066C23.5333 14.9466 23.5333 17.04 22.7467 18.8933L26.3867 20.5466ZM20.56 5.61329C19.1238 4.98668 17.5737 4.66326 16.0067 4.66326C14.4397 4.66326 12.8896 4.98668 11.4533 5.61329L13.1067 9.25329C14.96 8.46663 17.0533 8.46663 18.9067 9.26663L20.56 5.61329ZM5.61334 11.44C4.98671 12.8785 4.66331 14.4308 4.66331 16C4.66331 17.5691 4.98671 19.1214 5.61334 20.56L9.26667 18.8933C8.46667 17.0533 8.46667 14.9466 9.26667 13.0933L5.61334 11.44ZM11.4533 26.3866C12.8897 27.0143 14.4406 27.3372 16.0081 27.3349C17.5756 27.3326 19.1255 27.0052 20.56 26.3733L18.9067 22.7333C17.9935 23.1279 17.0095 23.3326 16.0147 23.3349C15.0199 23.3372 14.035 23.137 13.12 22.7466L11.4533 26.3866ZM16 2.66663C17.751 2.66663 19.4848 3.0115 21.1025 3.68157C22.7201 4.35163 24.19 5.33375 25.4281 6.57187C26.6662 7.80998 27.6483 9.27984 28.3184 10.8975C28.9885 12.5152 29.3333 14.249 29.3333 16C29.3333 19.5362 27.9286 22.9276 25.4281 25.4281C22.9276 27.9285 19.5362 29.3333 16 29.3333C14.249 29.3333 12.5152 28.9884 10.8976 28.3184C9.27988 27.6483 7.81003 26.6662 6.57191 25.4281C4.07143 22.9276 2.66667 19.5362 2.66667 16C2.66667 12.4637 4.07143 9.07235 6.57191 6.57187C9.0724 4.07138 12.4638 2.66663 16 2.66663ZM16 10.6666C14.5855 10.6666 13.229 11.2285 12.2288 12.2287C11.2286 13.2289 10.6667 14.5855 10.6667 16C10.6667 17.4144 11.2286 18.771 12.2288 19.7712C13.229 20.7714 14.5855 21.3333 16 21.3333C17.4145 21.3333 18.771 20.7714 19.7712 19.7712C20.7714 18.771 21.3333 17.4144 21.3333 16C21.3333 14.5855 20.7714 13.2289 19.7712 12.2287C18.771 11.2285 17.4145 10.6666 16 10.6666Z"
+                  fill="#2368A2" />
+              </svg>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Service 6 -->
+    <div id="service6" class="mt-20">
+      <div class="font-plexSerif font-bold flex flex-col lg:flex-row-reverse lg:mb-36">
+        <span class="text-5xl lg:text-7xl lg:mr-22 mb-4 lg:mb-0 text-gray-300">#6</span>
+        <span class="text-2xl  lg:text-5xl lg:mr-40 text-gray-700">Another brilliant service that you will benefit a
+          great deal from.</span>
+      </div>
+      <div class="flex flex-col lg:flex-row-reverse">
+        <div class="hidden w-full lg:block lg:ml-20 shadow-lg">
+          <img class="w-full h-full object-cover" src="./images/service-1.png" alt="A small golden trophy">
+        </div>
+        <div class="w-full mt-8 lg:mt-0">
+          <p class="text-lg lg:text-2xl font-medium mb-8 text-gray-600">
+            Lorem ipsum dolor sit amet. Consectetur adipiscing elit maecenas sed pharetra magna tortor.
+          </p>
+          <p class="text-gray-500 leading-loose">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Facilisis gravida sagittis purus eget vitae
+            faucibus sed tortor blandit. Tristique sit viverra posuere vestibulum bibendum donec. Placerat amet tellus
+            mauris quis aliquet fames aliquam. Sagittis, morbi suspendisse vitae mollis bibendum. Dolor, vitae, amet
+            purus feugiat malesuada molestie. Nibh malesuada viverra turpis id. Euismod molestie fermentum volutpat
+            bibendum arcu cursus non. Augue leo sollicitudin ut pretium quis et cursus nunc. Tristique sit viverra
+            posuere vestibulum bibendum donec. Placerat amet tellus mauris quis aliquet fames aliquam.
+          </p>
+          <div class="flex justify-center mt-8 mb-32 lg:hidden">
+            <div class="inline-block rounded-full p-3 bg-blue-100 mb-2">
+              <svg class="h-5 w-5" width="26" height="31" viewBox="0 0 26 31" fill="none"
+                xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M23.24 0.61438H2.76001C1.35201 0.61438 0.200012 1.7203 0.200012 3.07198V27.648C0.200012 28.9997 1.35201 30.1056 2.76001 30.1056H23.24C24.648 30.1056 25.8 28.9997 25.8 27.648V3.07198C25.8 1.7203 24.648 0.61438 23.24 0.61438ZM7.88001 25.1904C7.88001 25.8662 7.30401 26.4192 6.60001 26.4192H4.04001C3.33601 26.4192 2.76001 25.8662 2.76001 25.1904V24.576C2.76001 23.9001 3.33601 23.3472 4.04001 23.3472H6.60001C7.30401 23.3472 7.88001 23.9001 7.88001 24.576V25.1904ZM7.88001 20.2752C7.88001 20.951 7.30401 21.504 6.60001 21.504H4.04001C3.33601 21.504 2.76001 20.951 2.76001 20.2752V19.6608C2.76001 18.9849 3.33601 18.432 4.04001 18.432H6.60001C7.30401 18.432 7.88001 18.9849 7.88001 19.6608V20.2752ZM7.88001 15.36C7.88001 16.0358 7.30401 16.5888 6.60001 16.5888H4.04001C3.33601 16.5888 2.76001 16.0358 2.76001 15.36V14.7456C2.76001 14.0697 3.33601 13.5168 4.04001 13.5168H6.60001C7.30401 13.5168 7.88001 14.0697 7.88001 14.7456V15.36ZM15.56 25.1904C15.56 25.8662 14.984 26.4192 14.28 26.4192H11.72C11.016 26.4192 10.44 25.8662 10.44 25.1904V24.576C10.44 23.9001 11.016 23.3472 11.72 23.3472H14.28C14.984 23.3472 15.56 23.9001 15.56 24.576V25.1904ZM15.56 20.2752C15.56 20.951 14.984 21.504 14.28 21.504H11.72C11.016 21.504 10.44 20.951 10.44 20.2752V19.6608C10.44 18.9849 11.016 18.432 11.72 18.432H14.28C14.984 18.432 15.56 18.9849 15.56 19.6608V20.2752ZM15.56 15.36C15.56 16.0358 14.984 16.5888 14.28 16.5888H11.72C11.016 16.5888 10.44 16.0358 10.44 15.36V14.7456C10.44 14.0697 11.016 13.5168 11.72 13.5168H14.28C14.984 13.5168 15.56 14.0697 15.56 14.7456V15.36ZM23.24 25.1904C23.24 25.8662 22.664 26.4192 21.96 26.4192H19.4C18.696 26.4192 18.12 25.8662 18.12 25.1904V24.576C18.12 23.9001 18.696 23.3472 19.4 23.3472H21.96C22.664 23.3472 23.24 23.9001 23.24 24.576V25.1904ZM23.24 20.2752C23.24 20.951 22.664 21.504 21.96 21.504H19.4C18.696 21.504 18.12 20.951 18.12 20.2752V19.6608C18.12 18.9849 18.696 18.432 19.4 18.432H21.96C22.664 18.432 23.24 18.9849 23.24 19.6608V20.2752ZM23.24 15.36C23.24 16.0358 22.664 16.5888 21.96 16.5888H19.4C18.696 16.5888 18.12 16.0358 18.12 15.36V14.7456C18.12 14.0697 18.696 13.5168 19.4 13.5168H21.96C22.664 13.5168 23.24 14.0697 23.24 14.7456V15.36ZM23.24 9.83038C23.24 10.5062 22.664 11.0592 21.96 11.0592H4.04001C3.33601 11.0592 2.76001 10.5062 2.76001 9.83038V4.91518C2.76001 4.23934 3.33601 3.68638 4.04001 3.68638H21.96C22.664 3.68638 23.24 4.23934 23.24 4.91518V9.83038Z"
+                  fill="#2368A2" />
+              </svg>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Start of Testimonials Section -->
+  <section class="flex flex-col items-center pt-20 lg:pt-40 pb-48">
+    <h2 class="thick_underline uppercase tracking-wider text-4xl lg:text-5xl text-gray-700">Testimonials</h2>
+    <div class="flex flex-row flex-wrap justify-center pt-40 pb-18 max-w-screen-2xl">
+
+      <!-- Start of Testimonial Card-->
+      <div class="w-80 mx-10 shadow-md bg-white mb-16 lg:mb-0">
+        <p class="px-6 pt-8 pb-20 text-center text-gray-500">“Nec gravida tempus, lobortis elit augue tellus. Dolor, et
+          ipsum porta pharetra. Risus nunc turpis vehicula sed. Volutpat mollis quam volutpat nulla pellentesque.”</p>
+        <div class="flex flex-col items-center pb-6 bg-gray-100">
+          <img class="rounded-full w-24 border-4 -mt-12 border-white shadow-inner"
+            src="./images/Testimonials/smiling_man.png" alt="">
+          <span class="text-sm font-bold mt-2 tracking-wider text-gray-600">Thom Yorke</span>
+          <span class="text-sm text-gray-400">Founder, Radiohead</span>
+        </div>
+      </div>
+      <!-- End of Testimonial Card-->
+
+      <!-- Start of Testimonial Card-->
+      <div class="w-80 mx-10 shadow-md bg-white mb-16 lg:mb-0">
+        <p class="px-6 pt-8 pb-20 text-center text-gray-500">“Nec gravida tempus, lobortis elit augue tellus. Dolor, et
+          ipsum porta pharetra. Risus nunc turpis vehicula sed. Volutpat mollis quam volutpat nulla pellentesque.”</p>
+        <div class="flex flex-col items-center pb-6 bg-gray-100">
+          <img class="rounded-full w-24 border-4 -mt-12 border-white shadow-inner"
+            src="./images/Testimonials/smiling_woman.jpg" alt="">
+          <span class="text-sm font-bold mt-2 tracking-wider text-gray-600">Alfa Mist</span>
+          <span class="text-sm text-gray-400">Creative Director, Antiphon</span>
+        </div>
+      </div>
+      <!-- End of Testimonial Card-->
+
+      <!-- Start of Testimonial Card-->
+      <div class="w-80 mx-10 shadow-md bg-white mb-16 lg:mb-0">
+        <p class="px-6 pt-8 pb-20 text-center text-gray-500">“Nec gravida tempus, lobortis elit augue tellus. Dolor, et
+          ipsum porta pharetra. Risus nunc turpis vehicula sed. Volutpat mollis quam volutpat nulla pellentesque.”</p>
+        <div class="flex flex-col items-center pb-6 bg-gray-100">
+          <img class="rounded-full w-24 border-4 -mt-12 border-white shadow-inner"
+            src="./images/Testimonials/smiling_man_2.jpg" alt="">
+          <span class="text-sm font-bold mt-2 tracking-wider text-gray-600">Rory Ferreira</span>
+          <span class="text-sm text-gray-400">Artist, Milo</span>
+        </div>
+      </div>
+      <!-- End of Testimonial Card-->
+    </div>
+    <a class="inline-block py-2 px-3 uppercase border  border-blue-500 text-blue-500 hover:bg-blue-400 hover:border-blue-400 hover:text-blue-50 focus:ring-2 focus:ring-blue-300"
+      href="/">Read More</a>
+  </section>
+
+
+
+  <!-- Start of 'Ready To Get Started' Section -->
+  <section class="get_started__header flex flex-col items-center pt-14 pb-16 lg:pt-18 lg:pb-20 bg-white">
+    <h2 class="text-center font-bold px-4 lg:px-0 text-3xl lg:text-4xl uppercase text-gray-700">
+      Ready to Get Started?
+    </h2>
+    <a class="link_underline inline-block text-2xl mt-16 text-gray-600" href="/">Request a free consultation.</a>
+  </section>
+
+  <!--Footer links and social media-->
+  <footer class="py-16 border-t border-blue-50 bg-white">
+    <div class="flex flex-col lg:flex-row items-center justify-between mx-auto max-w-screen-2xl">
+      <div class="flex items-center">
+        <!-- Logo SVG-->
+        <a class="ml-4" href="/">
+          <svg class="h-6" viewBox="0 0 184 31" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="14.5" cy="16.5" r="14.5" fill="#3183C8" />
+            <path
+              d="m17.065 16.178-1.9849 2.7067-0.9022-1.2631-0.9022 1.2631-1.9849-2.7067c-3.4285 0.9022-3.4285 2.7067-3.4285 6.2253 0 0 2.7067 0.9925 5.7743 0.9925h1.0826c3.0676-0.0902 5.7743-0.9925 5.7743-0.9925 0-3.5186 0-5.3231-3.4285-6.2253zm-2.8871 0.6316-1.4436-0.6316 1.4436 1.4436 1.4436-1.4436-1.4436 0.6316z"
+              fill="#EFF8FF" />
+            <path
+              d="m14.178 9.0502c-1.7142 0-2.7066 1.624-2.436 3.4285 0.2707 1.8044 1.1729 3.0675 2.436 3.0675s2.1654-1.2631 2.436-3.0675c0.2707-1.8947-0.7218-3.4285-2.436-3.4285z"
+              fill="#EFF8FF" />
+            <path
+              d="m34.176 23.704h1.752v-14.16h-1.752v-1.296h4.992l4.416 9.384h0.072l4.44-9.384h4.896v1.296h-1.752v14.16h1.752v1.296h-6.336v-1.296h1.752v-12.816h-0.12l-1.2 2.832-4.152 8.568-4.128-8.568-1.2-2.832h-0.12v12.816h1.752v1.296h-5.064v-1.296zm26.852 0.168c1.008 0 1.744-0.312 2.208-0.936 0.48-0.624 0.72-1.456 0.72-2.496v-3.36c0-1.04-0.24-1.872-0.72-2.496-0.464-0.624-1.2-0.936-2.208-0.936s-1.752 0.312-2.232 0.936c-0.464 0.624-0.696 1.456-0.696 2.496v3.36c0 1.04 0.232 1.872 0.696 2.496 0.48 0.624 1.224 0.936 2.232 0.936zm0 1.416c-0.88 0-1.68-0.152-2.4-0.456s-1.336-0.736-1.848-1.296-0.912-1.24-1.2-2.04c-0.272-0.816-0.408-1.728-0.408-2.736s0.136-1.912 0.408-2.712c0.288-0.816 0.688-1.504 1.2-2.064s1.128-0.992 1.848-1.296 1.52-0.456 2.4-0.456 1.68 0.152 2.4 0.456 1.336 0.736 1.848 1.296 0.904 1.248 1.176 2.064c0.288 0.8 0.432 1.704 0.432 2.712s-0.144 1.92-0.432 2.736c-0.272 0.8-0.664 1.48-1.176 2.04s-1.128 0.992-1.848 1.296-1.52 0.456-2.4 0.456zm7.9263-1.584h1.632v-9.264l-1.632-0.312v-1.056l4.248-0.84v2.232h0.12c0.096-0.272 0.24-0.544 0.432-0.816 0.208-0.272 0.456-0.512 0.744-0.72 0.304-0.208 0.648-0.376 1.032-0.504 0.4-0.128 0.848-0.192 1.344-0.192 1.52 0 2.6 0.392 3.24 1.176 0.64 0.768 0.96 1.928 0.96 3.48v6.816h1.632v1.296h-5.904v-1.296h1.584v-6.672c0-1.04-0.2-1.8-0.6-2.28s-1.032-0.72-1.896-0.72c-0.32 0-0.64 0.048-0.96 0.144-0.304 0.08-0.584 0.216-0.84 0.408-0.24 0.176-0.44 0.4-0.6 0.672-0.144 0.272-0.216 0.6-0.216 0.984v7.464h1.584v1.296h-5.904v-1.296zm21.346 1.584c-0.928 0-1.752-0.152-2.472-0.456-0.72-0.32-1.328-0.768-1.824-1.344s-0.88-1.264-1.152-2.064c-0.256-0.8-0.384-1.688-0.384-2.664 0-0.992 0.136-1.888 0.408-2.688 0.288-0.8 0.68-1.48 1.176-2.04 0.512-0.576 1.112-1.016 1.8-1.32 0.704-0.32 1.472-0.48 2.304-0.48 0.848 0 1.608 0.144 2.28 0.432 0.672 0.272 1.24 0.664 1.704 1.176 0.48 0.512 0.848 1.128 1.104 1.848s0.384 1.52 0.384 2.4v0.648h-8.256v0.768c0 1.248 0.312 2.216 0.936 2.904 0.624 0.672 1.464 1.008 2.52 1.008 0.928 0 1.672-0.2 2.232-0.6 0.576-0.416 1-0.928 1.272-1.536l1.032 0.624c-0.144 0.416-0.36 0.824-0.648 1.224-0.272 0.4-0.616 0.76-1.032 1.08s-0.904 0.584-1.464 0.792c-0.56 0.192-1.2 0.288-1.92 0.288zm-2.928-7.824h5.472v-0.264c0-1.152-0.224-2.04-0.672-2.664-0.432-0.64-1.104-0.96-2.016-0.96-0.896 0-1.584 0.312-2.064 0.936-0.48 0.608-0.72 1.488-0.72 2.64v0.312zm12.001 12.624c-0.864 0-1.52-0.2-1.968-0.6-0.432-0.4-0.648-0.896-0.648-1.488 0-0.496 0.128-0.888 0.384-1.176 0.272-0.272 0.648-0.408 1.128-0.408 0.448 0 0.792 0.136 1.032 0.408 0.256 0.272 0.384 0.616 0.384 1.032 0 0.24-0.056 0.448-0.168 0.624-0.096 0.192-0.208 0.328-0.336 0.408v0.096c0.08 0.032 0.152 0.048 0.216 0.048h0.288c0.8641 0 1.6081-0.808 2.2321-2.424l0.384-1.056-4.5601-11.736h-1.2v-1.296h5.6881v1.296h-1.608l2.976 8.328h0.12l2.952-8.328h-1.584v-1.296h4.392v1.296h-1.2l-5.016 12.912c-0.176 0.432-0.384 0.848-0.624 1.248-0.224 0.416-0.496 0.776-0.816 1.08-0.304 0.32-0.656 0.568-1.056 0.744-0.4 0.192-0.8641 0.288-1.3921 0.288zm14.871-6.384h2.232v-14.04h-3.744v2.808h-2.184v-4.224h14.712v4.224h-2.184v-2.808h-3.744v14.04h2.232v1.296h-7.32v-1.296zm12.53 0h1.632v-9.264l-1.632-0.312v-1.056l4.248-0.84v2.232h0.12c0.112-0.288 0.248-0.56 0.408-0.816 0.176-0.272 0.384-0.512 0.624-0.72 0.256-0.208 0.544-0.376 0.864-0.504 0.336-0.128 0.712-0.192 1.128-0.192 0.736 0 1.32 0.184 1.752 0.552 0.448 0.368 0.672 0.896 0.672 1.584 0 0.544-0.144 0.976-0.432 1.296-0.272 0.304-0.648 0.456-1.128 0.456-0.496 0-0.888-0.128-1.176-0.384-0.272-0.272-0.408-0.608-0.408-1.008 0-0.272 0.056-0.496 0.168-0.672 0.112-0.192 0.248-0.304 0.408-0.336v-0.072c-0.048-0.016-0.104-0.024-0.168-0.024-0.064-0.016-0.16-0.024-0.288-0.024-0.304 0-0.608 0.08-0.912 0.24-0.288 0.16-0.552 0.368-0.792 0.624-0.224 0.24-0.408 0.52-0.552 0.84-0.144 0.304-0.216 0.608-0.216 0.912v7.488h2.112v1.296h-6.432v-1.296zm14.805 1.584c-1.248 0-2.192-0.304-2.832-0.912-0.624-0.624-0.936-1.472-0.936-2.544 0-1.216 0.432-2.136 1.296-2.76s2.272-0.936 4.224-0.936h1.728v-1.632c0-0.976-0.216-1.72-0.648-2.232s-1.112-0.768-2.04-0.768c-0.784 0-1.376 0.112-1.776 0.336v0.096c0.176 0.08 0.336 0.224 0.48 0.432 0.16 0.192 0.24 0.464 0.24 0.816 0 0.448-0.136 0.808-0.408 1.08-0.256 0.272-0.632 0.408-1.128 0.408-0.416 0-0.768-0.136-1.056-0.408-0.272-0.288-0.408-0.672-0.408-1.152 0-0.368 0.104-0.72 0.312-1.056 0.224-0.352 0.544-0.664 0.96-0.936s0.92-0.488 1.512-0.648c0.608-0.16 1.304-0.24 2.088-0.24 1.504 0 2.64 0.352 3.408 1.056s1.152 1.688 1.152 2.952v7.488h1.632v1.08c-0.224 0.128-0.512 0.24-0.864 0.336s-0.728 0.144-1.128 0.144c-0.736 0-1.28-0.184-1.632-0.552-0.336-0.384-0.504-0.872-0.504-1.464v-0.12h-0.12c-0.112 0.272-0.256 0.536-0.432 0.792-0.176 0.24-0.408 0.464-0.696 0.672-0.272 0.208-0.608 0.368-1.008 0.48-0.4 0.128-0.872 0.192-1.416 0.192zm1.056-1.68c0.704 0 1.28-0.168 1.728-0.504 0.464-0.336 0.696-0.888 0.696-1.656v-2.136h-1.44c-1.136 0-1.928 0.184-2.376 0.552s-0.672 0.896-0.672 1.584v0.456c0 0.576 0.184 1.008 0.552 1.296 0.368 0.272 0.872 0.408 1.512 0.408zm14.345 1.68c-0.944 0-1.784-0.16-2.52-0.48-0.72-0.32-1.328-0.768-1.824-1.344s-0.872-1.264-1.128-2.064-0.384-1.68-0.384-2.64c0-1.024 0.152-1.936 0.456-2.736 0.304-0.816 0.728-1.504 1.272-2.064s1.184-0.984 1.92-1.272c0.752-0.304 1.568-0.456 2.448-0.456 1.376 0 2.448 0.288 3.216 0.864 0.784 0.576 1.176 1.312 1.176 2.208 0 0.56-0.152 1-0.456 1.32-0.304 0.304-0.712 0.456-1.224 0.456-0.528 0-0.928-0.144-1.2-0.432-0.272-0.304-0.408-0.68-0.408-1.128 0-0.368 0.096-0.688 0.288-0.96s0.44-0.472 0.744-0.6v-0.12c-0.192-0.08-0.432-0.152-0.72-0.216-0.288-0.08-0.648-0.12-1.08-0.12-0.528 0-1.008 0.096-1.44 0.288s-0.8 0.464-1.104 0.816c-0.304 0.336-0.544 0.744-0.72 1.224-0.16 0.48-0.24 1.016-0.24 1.608v2.088c0 1.2 0.296 2.152 0.888 2.856 0.592 0.688 1.4 1.032 2.424 1.032 0.96 0 1.704-0.208 2.232-0.624 0.544-0.416 0.96-0.928 1.248-1.536l1.032 0.624c-0.144 0.416-0.352 0.824-0.624 1.224s-0.608 0.768-1.008 1.104c-0.4 0.32-0.872 0.584-1.416 0.792-0.544 0.192-1.16 0.288-1.848 0.288zm6.466-1.584h1.632v-14.736l-1.632-0.312v-1.056l4.32-0.84v12.288h0.12l1.776-2.016 2.952-3.216h-1.56v-1.296h5.304v1.296h-1.776l-3.168 3.264 4.248 6.624h1.224v1.296h-5.592v-1.296h1.344l-3.024-4.92-1.848 1.944v2.976h1.584v1.296h-5.904v-1.296z"
+              fill="#3183C8" />
+          </svg>
+        </a>
+      </div>
+      <ul class="flex flex-col lg:flex-row items-center text-sm font-medium text-gray-500 py-12 lg:py-0">
+        <li class="mx-7 hover:text-gray-700 mb-2 lg:mb-0">
+          <a href="/accounting-services.html">ACCOUNTING SERVICES</a>
+        </li>
+
+        <li class="mx-7 hover:text-gray-700 mb-2 lg:mb-0">
+          <a href="/accounting-resources.html">RESOURCES</a>
+        </li>
+
+        <li class="mx-7 hover:text-gray-700 mb-2 lg:mb-0">
+          <a href="/blog.html">BLOG</a>
+        </li>
+
+        <li class="mx-7 hover:text-gray-700 mb-2 lg:mb-0">
+          <a href="/about.html">ABOUT</a>
+        </li>
+
+        <li class="mx-7 hover:text-gray-700 mb-2 lg:mb-0">
+          <a href="/contact.html">CONTACT</a>
+        </li>
+      </ul>
+      <div class="flex text-blue-400">
+        <!-- Twitter Logo -->
+        <a class="hover:text-blue-200" href="/">
+          <svg class="mx-4 fill-current" width="21" height="17" viewBox="0 0 21 17" fill="none"
+            xmlns="http://www.w3.org/2000/svg">
+            <title>Twitter</title>
+            <path
+              d="M20.92 2C20.15 2.35 19.32 2.58 18.46 2.69C19.34 2.16 20.02 1.32 20.34 0.31C19.51 0.81 18.59 1.16 17.62 1.36C16.83 0.5 15.72 0 14.46 0C12.11 0 10.19 1.92 10.19 4.29C10.19 4.63 10.23 4.96 10.3 5.27C6.74 5.09 3.57 3.38 1.46 0.79C1.09 1.42 0.88 2.16 0.88 2.94C0.88 4.43 1.63 5.75 2.79 6.5C2.08 6.5 1.42 6.3 0.84 6V6.03C0.84 8.11 2.32 9.85 4.28 10.24C3.65073 10.4122 2.9901 10.4362 2.35 10.31C2.62161 11.1625 3.15354 11.9084 3.87102 12.4429C4.5885 12.9775 5.45545 13.2737 6.35 13.29C4.83363 14.4904 2.954 15.1393 1.02 15.13C0.68 15.13 0.34 15.11 0 15.07C1.9 16.29 4.16 17 6.58 17C14.46 17 18.79 10.46 18.79 4.79C18.79 4.6 18.79 4.42 18.78 4.23C19.62 3.63 20.34 2.87 20.92 2Z" />
+          </svg>
+        </a>
+        <!-- Facebook Logo -->
+        <a class="hover:text-blue-200" href="/">
+          <svg class="mx-4 fill-current" width="20" height="20" viewBox="0 0 20 20" fill="none"
+            xmlns="http://www.w3.org/2000/svg">
+            <title>Facebook</title>
+            <path
+              d="M10 0C4.5 0 0 4.49 0 10.02C0 15.02 3.66 19.17 8.44 19.92V12.92H5.9V10.02H8.44V7.81C8.44 5.3 9.93 3.92 12.22 3.92C13.31 3.92 14.45 4.11 14.45 4.11V6.58H13.19C11.95 6.58 11.56 7.35 11.56 8.14V10.02H14.34L13.89 12.92H11.56V19.92C13.9164 19.5478 16.0622 18.3455 17.6099 16.5301C19.1576 14.7146 20.0054 12.4056 20 10.02C20 4.49 15.5 0 10 0Z" />
+          </svg>
+        </a>
+        <!-- Instagram Logo -->
+        <a class="hover:text-blue-200" href="/">
+          <svg class="mx-4 fill-current" width="20" height="20" viewBox="0 0 20 20" fill="none"
+            xmlns="http://www.w3.org/2000/svg">
+            <title>Instagram</title>
+            <path
+              d="M5.8 0H14.2C17.4 0 20 2.6 20 5.8V14.2C20 15.7383 19.3889 17.2135 18.3012 18.3012C17.2135 19.3889 15.7383 20 14.2 20H5.8C2.6 20 0 17.4 0 14.2V5.8C0 4.26174 0.61107 2.78649 1.69878 1.69878C2.78649 0.61107 4.26174 0 5.8 0ZM5.6 2C4.64522 2 3.72955 2.37928 3.05442 3.05442C2.37928 3.72955 2 4.64522 2 5.6V14.4C2 16.39 3.61 18 5.6 18H14.4C15.3548 18 16.2705 17.6207 16.9456 16.9456C17.6207 16.2705 18 15.3548 18 14.4V5.6C18 3.61 16.39 2 14.4 2H5.6ZM15.25 3.5C15.5815 3.5 15.8995 3.6317 16.1339 3.86612C16.3683 4.10054 16.5 4.41848 16.5 4.75C16.5 5.08152 16.3683 5.39946 16.1339 5.63388C15.8995 5.8683 15.5815 6 15.25 6C14.9185 6 14.6005 5.8683 14.3661 5.63388C14.1317 5.39946 14 5.08152 14 4.75C14 4.41848 14.1317 4.10054 14.3661 3.86612C14.6005 3.6317 14.9185 3.5 15.25 3.5ZM10 5C11.3261 5 12.5979 5.52678 13.5355 6.46447C14.4732 7.40215 15 8.67392 15 10C15 11.3261 14.4732 12.5979 13.5355 13.5355C12.5979 14.4732 11.3261 15 10 15C8.67392 15 7.40215 14.4732 6.46447 13.5355C5.52678 12.5979 5 11.3261 5 10C5 8.67392 5.52678 7.40215 6.46447 6.46447C7.40215 5.52678 8.67392 5 10 5ZM10 7C9.20435 7 8.44129 7.31607 7.87868 7.87868C7.31607 8.44129 7 9.20435 7 10C7 10.7956 7.31607 11.5587 7.87868 12.1213C8.44129 12.6839 9.20435 13 10 13C10.7956 13 11.5587 12.6839 12.1213 12.1213C12.6839 11.5587 13 10.7956 13 10C13 9.20435 12.6839 8.44129 12.1213 7.87868C11.5587 7.31607 10.7956 7 10 7Z" />
+          </svg>
+        </a>
+      </div>
+    </div>
+
+    <!-- Fine Print-->
+    <div class="flex flex-col items-center mt-24 text-xs text-gray-400">
+      <div class="mb-4">
+        <a class="mx-4 hover:text-gray-600" href="/" rel="nofollow">Privacy Policy</a>
+        <a class="mx-4 hover:text-gray-600" href="/" rel="nofollow">Terms &amp; Conditions</a>
+      </div>
+      <span>&copy; MoneyTrack 2021</span>
+    </div>
+  </footer>
+</body>
+
+<script src="js/index.js"></script>
+
+</html>

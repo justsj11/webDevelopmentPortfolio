@@ -1,0 +1,14 @@
+{
+  "name": "test",
+  "version": "1.0.0",
+  "description": "",
+  "main": "tailwind.config.js",
+  "scripts": {
+    "build": "npm run build:css",
+    "build:css": "npx tailwindcss-cli@latest build ./src/styles/tailwind.css -o ./src/styles/index.css",
+    "build:prod": "NODE_ENV=production npx tailwindcss-cli@latest build ./src/styles/tailwind.css -o ./build/styles/index.css"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
